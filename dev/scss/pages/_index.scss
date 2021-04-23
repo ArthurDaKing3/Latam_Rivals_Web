@@ -1,0 +1,130 @@
+.main-section__title,
+.team-section__title,
+.news-section__title {
+    font-family: $font-title;
+}
+
+.main {
+
+    &-section {
+        position: relative;
+    }
+
+    &__logo {
+        width: 240px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        position: relative;
+        top: 10px;
+        @include for-tablet {
+            width: 320px;
+        }
+
+        @include for-laptop {
+            width: 380px;
+        }
+    }
+
+    &-section__title {
+        font-size: $font-size-large;
+        margin-top: 50px;
+    }
+
+    &-section__paragraph {
+        font-family: 'Arial', sans-serif;
+    }
+}
+
+.team-section {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__title {
+        color: $danger-color;
+    }
+
+    &__teams {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+        margin-right: 2em;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    &__link {
+        text-decoration: none;
+        display: inline-block;
+        width: 160px;
+        height: 160px;
+        margin: 0;
+    }
+
+    &__logo {
+        display: inline-block;
+        margin-top: 15px;
+        width: 120px;
+        height: 120px;
+    }
+
+    &__name {
+        font-family: $teams-font;
+        font-size: 1.5em;
+        color: $dark-color;
+        display: inline-block;
+        text-transform: uppercase;
+        
+    }
+
+    &__link:hover &__name {
+        color: $danger-color;
+    }
+}
+
+.news-section {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__title {
+        color: $danger-color;
+    }
+
+    &__news {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+        margin-right: 2em;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    &__link {
+        text-decoration: none;
+        display: inline-block;
+        width: 160px;
+        height: 160px;
+        margin: 0;
+    }
+
+    &__img {
+        display: inline-block;
+        margin-top: 15px;
+        width: 120px;
+        height: 120px;
+    }
+
+    &__name {
+        font-family: $teams-font;
+        font-size: 1.5em;
+        color: $dark-color;
+        display: inline-block;
+        text-transform: uppercase;
+        
+    }
+
+    &__link:hover &__name {
+        color: $danger-color;
+        
+    }
+}

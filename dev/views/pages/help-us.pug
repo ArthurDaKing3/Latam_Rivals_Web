@@ -1,0 +1,22 @@
+extends ../templates/template
+block title
+    title Ayúdanos | Latam Rivals
+block main
+    h1.main-section__title Sugerencias
+    section.main-section
+        form(action="", method="post")
+            fieldset
+                legend Deja tu comentario
+                .form-group
+                    label(for="name") Nombre
+                        span.required *
+                    input(type="text", name="name", id="name" required)
+                .form-group
+                    label(for="email") E-mail
+                        span.required *
+                    input(type="email", name="email", id="email" required)
+                .form-group
+                    label(for="comment") Mensaje
+                        span.required *
+                    textarea(name="comment", id="comment", cols="30", rows="10" required)
+                input(type="submit")

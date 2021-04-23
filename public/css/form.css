@@ -1,0 +1,103 @@
+.body {
+    background-color: #171717;
+}
+
+/* FORMULARIO */
+.formlr{
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+
+}
+.form-box{
+    width: 380px;
+    height: 480px;
+    position: relative;
+    margin: 30px auto;
+    background: #fff;
+    padding: 5px;
+    font-family: "News Cycle", sans-serif; 
+    font-size: 17.5px; 
+    font-weight: 800;
+    border-radius: 20px;
+    overflow: hidden;
+
+}
+.btn-box{
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius: 30px;  
+}
+.toggle-btn{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+#btn{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 130px;
+    height: 100%;
+    background: linear-gradient(to right, #ff2d2d,#ff8181 );
+    border-radius: 30px;
+    transition: .5s;
+}
+.input{
+    top: 155px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+
+.entrada{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+.submit-btn{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, #ff2d2d,#ff8181 );
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+.check{
+    margin: 30px 10px 30px 0;
+}
+.cspan{
+    bottom: 69px;
+    position: absolute;
+}
+#login{
+    left: 50px;
+}
+#register{
+    left: 450px;
+}
+.logoform{
+    display: block;
+    position: relative;
+    margin: 30px auto;
+    width: 400px;
+    height: auto;
+}
+
+#register.input{
+    top: 120px;
+}

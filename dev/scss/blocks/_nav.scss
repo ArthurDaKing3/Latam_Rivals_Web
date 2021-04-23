@@ -1,0 +1,145 @@
+/*ESTILOS GENERALES NAV*/
+.nav {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 60%;
+    font-family: $nav-font;
+    font-size: $font-size-small;
+    order: 2;
+    display: none;
+    
+    @include for-laptop {
+        display: flex;
+        position: static;
+        height: 80px;
+        width: auto;
+    }
+
+    &__list,
+    .subnav__list {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    &__item,
+    .subnav__item {
+        line-height: 3rem;
+        position: relative;
+    }
+
+    &__link,
+    .subnav__link {
+        background-color: $background-color;
+        text-decoration: none;
+        color: $primary-color;
+        display: block;
+        border-bottom: 2px solid $dark-color;
+
+        @include for-laptop {
+            border-bottom: 0;
+        }
+    }
+
+    &__link::first-letter,
+    .subnav__link::first-letter {
+        text-transform: uppercase;
+    }
+
+    &__link:hover,
+    .subnav__link:hover {
+        background-color: $dark-color-2;
+        color: $dark-color;
+    }
+
+    /*ESTILOS PRIMER NIVEL*/
+
+    &__list {
+        background-color: $background-color;
+        display: block;
+        margin-top: 80px;
+
+        @include for-laptop {
+            display: flex;
+            margin: 15px 0 0;
+        }
+    }
+
+    &__item {
+        @include for-laptop {
+            float: left;
+        }
+    }
+
+    &__item:hover .subnav__list{
+        visibility: visible;
+        opacity: 1;
+        height: auto;
+    }
+
+    &__link {
+        padding: 0 1.8em;
+    }
+
+    &.show {
+        display: block;
+    }
+}
+
+.show .first-bar {
+    transform: rotate(-45deg);
+    top: 1em;
+}
+
+.show .second-bar {
+    display: none;
+}
+
+.show .third-bar {
+    transform: rotate(45deg);
+    top: 1em;
+}
+
+.arrow-icon {
+    position: absolute;
+    top: 15px;
+    right: 4%;
+    color: $secondary-color;
+    @include for-laptop {
+        right: 4%;
+    }
+}
+
+.nav__item:hover .arrow-icon {
+    color: $dark-color;
+    cursor: pointer;
+}
+/*ESTILOS SEGUNDO NIVEL*/
+
+.subnav__list {
+    width: 100%;
+    transition: visibility 0s, opacity 0.3s linear;
+    font-size: $font-size-small;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+
+    @include for-laptop {
+        top: 75%;
+        left: 0;
+        position: absolute;
+    }
+}
+
+.subnav__link {
+    padding: 0 24%;
+
+    @include for-tablet {
+        padding: 0 20%;
+    }
+
+    @include for-laptop {
+        text-align: center;
+        padding: 0;
+    }
+}

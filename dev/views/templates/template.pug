@@ -1,0 +1,58 @@
+include ../config/config
+<!DOCTYPE html>
+html(lang="es")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        link(rel="stylesheet", href="css/styles.css")
+        link(rel="shortcut icon", href="./assets/images/favicon.ico", type="image/x-icon")
+        block title
+        script(src="https://kit.fontawesome.com/9f65d8e98d.js" crossorigin="anonymous")
+    body
+        header.header
+            a.header__logo-container(href="/")
+                img.header__logo(src="./assets/images/logo/LATAM_blanco_logo.png", alt="Latam Rivals")
+            nav.nav#nav
+                ul.nav__list
+                    li.nav__item
+                        a.nav__link(href='index.html') Inicio
+                    for page in pages
+                        li.nav__item
+                            a.nav__link(href=page+'.html') #{page}
+                            if page == 'torneos'
+                                i.fas.fa-caret-down.arrow-icon
+                                ul.subnav__list
+                                    for page2 in pages2
+                                        li.subnav__item
+                                            a.subnav__link(href=page2+'.html') #{page2}
+            div.header-right
+                a.btn-login(href="#") Iniciar sesión
+            .toggle-menu#toggle
+                .first-bar
+                .second-bar
+                .third-bar
+        main.main
+            block main
+        footer.footer
+            .footer__links
+                ul.footer__list
+                    li.footer__list-item
+                        a.footer__list-link(href="help-us.html") Ayúdanos a mejorar
+                    li.footer__list-item
+                        a.footer__list-link(href="about.html") Acerca de
+                    li.footer__list-item
+                        a.footer__list-link(href="faq.html") FAQ
+            .footer__logo
+                img(src="./assets/images/logo/LATAM_blanco.png", alt="Logo Latam Rivals")
+            .footer__social
+                a.footer__social-link(href="https://www.twitch.tv/latamrivals", target="_blank", rel="noopener noreferrer")
+                    i.fab.fa-twitch
+                a.footer__social-link(href="https://discord.gg/cZr33wYQDx", target="_blank", rel="noopener noreferrer")        
+                    i.fab.fa-discord
+                a.footer__social-link(href="https://twitter.com/LatamRivals", target="_blank", rel="noopener noreferrer")        
+                    i.fab.fa-twitter-square
+            .footer__copy
+                span &copy; Latam Rivals Inc. Todos los derechos reservados.
+            
+        script(src="js/scripts-min.js")

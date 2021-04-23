@@ -1,0 +1,89 @@
+.header {
+    background-color: $background-color;
+    position: fixed;
+    font-family: sans-serif;
+    display: flex;
+    min-width: 100vw;
+    height: 80px;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+
+    &__logo-container {
+        order: 1;
+    }
+
+    &__logo {
+        display: block;
+        max-width: 64px;
+        margin-left: 20px;
+    }
+
+    &-right {
+        margin-right: 20px;
+        display: none;
+    
+        @include for-laptop {
+            display: block;
+        }
+        order: 2;
+    }
+}
+
+.btn-login {
+    background-color: $cta-color;
+    color: $primary-color;
+    line-height: 16px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: $login-font, sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    display: inline-block;
+    width: 150px;
+    padding: 12px 0;
+    border-radius: 2px;
+    margin-right: 10px;
+
+    &:hover {
+        background-color: $cta-color-2;
+    }
+}
+
+/*TOGGLE MENU*/
+
+.toggle-menu {
+    height: 40px;
+    width: 40px;
+    position: relative;
+    right: 20px;
+    order: 3;
+    cursor: pointer;
+
+    & .first-bar,
+    & .second-bar,
+    & .third-bar {
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        background-color: #ccc;
+        border-radius: 5px;
+    }
+
+    & .first-bar {
+        top: 7px;
+    }
+
+    & .second-bar {
+        top: 17px;
+    }
+
+    & .third-bar {
+        top: 27px;
+    }
+
+    @include for-laptop {
+        display: none;
+    }
+}

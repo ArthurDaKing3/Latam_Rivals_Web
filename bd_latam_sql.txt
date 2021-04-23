@@ -1,0 +1,64 @@
+CODIGO SQL BD_LATAM
+
+CREATE DATABASE `bd_latam`;
+
+CREATE TABLE `categorias` (
+  `idCategoria` int NOT NULL AUTO_INCREMENT,
+  `categoria` varchar(20) NOT NULL,
+  PRIMARY KEY (`idCategoria`)
+);
+
+CREATE TABLE `equipos` (
+  `idEquipo` int NOT NULL,
+  `nombreEquipo` varchar(45) NOT NULL,
+  `logoEquipo` longblob NOT NULL,
+  `idCategoria` int NOT NULL,
+  PRIMARY KEY (`idEquipo`),
+  FOREIGN KEY (`idCategoria`) REFERENCES `categorias` (`idCategoria`)
+);
+
+CREATE TABLE `info_lol` (
+  `idInfo_lol` int NOT NULL AUTO_INCREMENT,
+  `nicknameL` varchar(30) NOT NULL,
+  `nivelL` int NOT NULL,
+  `rangoL` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idInfo_lol`)
+);
+
+CREATE TABLE `info_val` (
+  `idInfo_val` int NOT NULL AUTO_INCREMENT,
+  `nicknameV` varchar(30) NOT NULL,
+  `nivelV` int NOT NULL,
+  `rangoV` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idInfo_val`)
+);
+
+CREATE TABLE `integrantes` (
+  `idIntegrante` int NOT NULL AUTO_INCREMENT,
+  `rol` varchar(20) NOT NULL,
+  `idUsuario` int DEFAULT NULL,
+  `idInfoVal` int DEFAULT NULL,
+  `idInfoLol` int DEFAULT NULL,
+  `idEquipo` int NOT NULL,
+  PRIMARY KEY (`idIntegrante`),
+  FOREIGN KEY (`idUsuario`) REFERENCES `usuarios` (`idUsuario`),
+  FOREIGN KEY (`idInfoVal`) REFERENCES `info_val` (`idInfo_val`),
+  FOREIGN KEY (`idInfoLol`) REFERENCES `info_lol` (`idInfo_lol`),
+  FOREIGN KEY (`idEquipo`) REFERENCES `equipos` (`idEquipo`)
+);
+
+CREATE TABLE `tipo_usuarios` (
+  `idTipoUsuario` int NOT NULL AUTO_INCREMENT,
+  `tipoUsuario` varchar(20) NOT NULL COMMENT 'Los distintos tipos de usuario son: admin, jugador e invitado.',
+  PRIMARY KEY (`idTipoUsuario`)
+);
+
+CREATE TABLE `usuarios` (
+  `idUsuario` int NOT NULL AUTO_INCREMENT,
+  `nombreUsuario` varchar(45) NOT NULL,
+  `correo` varchar(45) NOT NULL,
+  `contraseña` varchar(45) NOT NULL,
+  `idTipoUsuario` int NOT NULL,
+  PRIMARY KEY (`idUsuario`),
+  FOREIGN KEY (`idTipoUsuario`) REFERENCES `tipo_usuarios` (`idTipoUsuario`)
+);
